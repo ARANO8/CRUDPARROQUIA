@@ -2,9 +2,13 @@
 
 ### Requisitos
 Para ejecutar este proyecto, necesitas tener instalados los siguientes elementos:
+
 -**PYTHON ** 3.13.0 
+
 [Descargar Python](https://www.python.org/downloads/ "Descargar Python")
+
 -**SQL Server 2019 Express**
+
  [Descargar SQL Server 2019 Express](Download Microsoft® SQL Server® 2019 Express from Official Microsoft Download Center "Descargar SQL Server 2019 Express")
  
 ### Instalación
@@ -14,6 +18,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local:
     `$ git clone https://github.com/jafernandez22/CRUD-SQLSERVER.git`
 
 2.  Sigue los pasos del pdf guia
+
 
 ``[PDF-GUIA](https://drive.google.com/file/d/1pBmTl3W4lEBOtBcPZHEIk5WgIwlsQudF/view?usp=sharing "PDF-GUIA")``
 

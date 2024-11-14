@@ -39,6 +39,7 @@ Nota: En SqlServer-BDVENTAS hacer correr lo siguiente:
         JOIN PRODUCTO P ON DF.COD_PRO = P.COD_PRO
         WHERE DF.NUM_FAC = @num_fac;
     END;
+    GO
     
     ---crear en sql vista
     CREATE VIEW VISTAPRODUCTOSPROVEEDOR AS
@@ -51,3 +52,5 @@ Nota: En SqlServer-BDVENTAS hacer correr lo siguiente:
     FROM PROVEEDOR PR
     JOIN ABASTECIMIENTO A ON PR.COD_PRV = A.COD_PRV
     JOIN PRODUCTO P ON A.COD_PRO = P.COD_PRO;
+    GO
+   

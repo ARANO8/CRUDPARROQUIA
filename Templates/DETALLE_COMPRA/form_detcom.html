@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">   
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+    <title>Registrar Detalle de Compra</title>
+</head>
+<body>
+<div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Registrar Nuevo Detalle de Compra</h2>
+        <a href="/detalle_compra" class="btn btn-outline-secondary">Volver a la Lista</a>
+    </div>
+    <hr>
+
+    <form action="{{ url_for('registrar_detalle_compra') }}" method="POST">
+        <div class="row g-3">
+            <!-- Número de Orden de Compra -->
+            <div class="col-md-6 mb-3">
+                <label for="NUM_OCO" class="form-label">Número de Orden de Compra</label>
+                <input type="text" class="form-control" name="NUM_OCO" id="NUM_OCO" placeholder="Ingrese el número de orden de compra" required>
+            </div>
+
+            <!-- Código de Producto -->
+            <div class="col-md-6 mb-3">
+                <label for="COD_PRO" class="form-label">Código de Producto</label>
+                <input type="text" class="form-control" name="COD_PRO" id="COD_PRO" placeholder="Ingrese el código de producto" required>
+            </div>
+
+            <!-- Cantidad Detallada -->
+            <div class="col-md-6 mb-3">
+                <label for="CAN_DET" class="form-label">Cantidad Detallada</label>
+                <input type="number" class="form-control" name="CAN_DET" id="CAN_DET" placeholder="Ingrese la cantidad detallada" required>
+            </div>
+        </div>
+
+        <!-- Botón de Enviar -->
+        <div class="d-flex justify-content-end mt-3">
+            <button type="submit" class="btn btn-success">Registrar</button>
+        </div>
+    </form>
+</div>
+
+<!-- Optional JavaScript; Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
+

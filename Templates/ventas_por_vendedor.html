@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Ventas por Vendedor{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Ventas por Vendedor</h2>
+
+    {% if ventas %}
+    <div class="table-responsive">
+        <table class="table table-hover mt-4">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Código Vendedor</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Número de Ventas</th>
+                    <th scope="col">Total Ingresos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for venta in ventas %}
+                <tr>
+                    <td>{{ venta.COD_VEN }}</td>
+                    <td>{{ venta.NOM_VEN }}</td>
+                    <td>{{ venta.APE_VEN }}</td>
+                    <td>{{ venta.NUMERO_VENTAS }}</td>
+                    <td>${{ venta.TOTAL_INGRESOS }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            No se encontraron ventas de vendedores.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+

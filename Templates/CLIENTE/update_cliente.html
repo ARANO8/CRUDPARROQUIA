@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">   
+<!-- Custom JavaScript -->
+<script src="{{ url_for('static', filename='js/test.js') }}"></script>
+    <!-- Title Block -->
+    <title>FORM ACTUALIZACIONH</title>
+</head>
+
+<body>
+    <div class="container my-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Actualizar Cliente</h2>
+            <a href="/clientes" class="btn btn-outline-secondary">Volver a la Lista</a>
+        </div>
+        <hr>
+    
+        <form action="/clientes/{{ cliente.COD_CLI }}/actualizar" method="POST">
+            <div class="row g-3">
+                <div class="col-md-6 mb-3">
+                    <label for="RSO_CLI" class="form-label">Razón Social</label>
+                    <input type="text" class="form-control" name="RSO_CLI" id="RSO_CLI" value="{{ cliente.RSO_CLI }}" required>
+                </div>
+    
+                <div class="col-md-6 mb-3">
+                    <label for="DIR_CLI" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" name="DIR_CLI" id="DIR_CLI" value="{{ cliente.DIR_CLI }}" required>
+                </div>
+    
+                <div class="col-md-6 mb-3">
+                    <label for="TLF_CLI" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" name="TLF_CLI" id="TLF_CLI" value="{{ cliente.TLF_CLI }}" required>
+                </div>
+    
+                <div class="col-md-6 mb-3">
+                    <label for="RUC_CLI" class="form-label">RUC (opcional)</label>
+                    <input type="text" class="form-control" name="RUC_CLI" id="RUC_CLI" value="{{ cliente.RUC_CLI }}">
+                </div>
+    
+                <div class="col-md-6 mb-3">
+                    <label for="COD_DIS" class="form-label">Código Distrito</label>
+                    <input type="text" class="form-control" name="COD_DIS" id="COD_DIS" value="{{ cliente.COD_DIS }}" required>
+                </div>
+    
+                <div class="col-md-6 mb-3">
+                    <label for="FEC_REG" class="form-label">Fecha de Registro</label>
+                    <input type="date" class="form-control" name="FEC_REG" id="FEC_REG" value="{{ cliente.FEC_REG }}" required>
+                </div>
+    
+                <div class="col-md-6 mb-3">
+                    <label for="TIP_CLI" class="form-label">Tipo Cliente</label>
+                    <select class="form-select" name="TIP_CLI" id="TIP_CLI" required>
+                        <option value="" disabled>Seleccione el tipo</option>
+                        <option value="1" {% if cliente.TIP_CLI == '1' %}selected{% endif %}>1</option>
+                        <option value="2" {% if cliente.TIP_CLI == '2' %}selected{% endif %}>2</option>
+                    </select>
+                </div>
+    
+                <div class="col-md-6 mb-3">
+                    <label for="CON_CLI" class="form-label">Contacto</label>
+                    <input type="text" class="form-control" name="CON_CLI" id="CON_CLI" value="{{ cliente.CON_CLI }}" required>
+                </div>
+            </div>
+    
+            <div class="d-flex justify-content-end mt-3">
+                <button type="submit" class="btn btn-success">Actualizar</button>
+            </div>
+        </form>
+    </div>
+    <!-- Optional JavaScript; Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

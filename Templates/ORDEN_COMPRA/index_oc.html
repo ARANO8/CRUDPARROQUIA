@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Lista de Órdenes de Compra</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://st3.depositphotos.com/27847728/34794/v/450/depositphotos_347941158-stock-illustration-initial-letter-logo-creative-modern.jpg" alt="" width="60" height="54">
+            </a>
+            <a class="navbar-brand" href="/">VENTAS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/clientes">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/abastecimiento">Abastecimiento</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Detalle
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="/detalle_compra">Compra</a></li>
+                          <li><a class="dropdown-item" href="/detalle_factura">Factura</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/distritos">Distrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/facturas">Factura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/ordenes-compra">Orden-Compra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/productos">Producto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/proveedores">Proveedor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/vendedores">Vendedor</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Lista de Órdenes de Compra</h2>
+            <a href="{{ url_for('registrar_orden_compra') }}" class="btn btn-primary">Registrar Nueva Orden</a>
+        </div>
+        <hr>
+
+        {% if orden_compra_list|length == 0 %}
+            <div class="alert alert-info mt-4" role="alert">
+                No se ha encontrado ninguna orden de compra. ¡Registre la primera orden ahora!
+            </div>
+        {% else %}
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Número de Orden</th>
+                            <th scope="col">Fecha de Orden</th>
+                            <th scope="col">Código de Proveedor</th>
+                            <th scope="col">Fecha de Facturación</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for orden in orden_compra_list %}
+                        <tr>
+                            <th scope="row">{{ loop.index }}</th>
+                            <td>{{ orden.NUM_OCO }}</td>
+                            <td>{{ orden.FEC_OCO }}</td>
+                            <td>{{ orden.COD_PRV }}</td>
+                            <td>{{ orden.FAT_OCO }}</td>
+                            <td>{{ orden.EST_OCO }}</td>
+                            <td>
+                                <a href="{{ url_for('actualizar_orden_compra', num_oco=orden.NUM_OCO) }}" class="btn btn-sm btn-warning mx-1">Actualizar</a>
+                                <a href="{{ url_for('eliminar_orden_compra', num_oco=orden.NUM_OCO) }}" class="btn btn-sm btn-danger mx-1">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Optional JavaScript; Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
+

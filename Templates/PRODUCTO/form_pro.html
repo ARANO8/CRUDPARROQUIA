@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Registrar Nuevo Producto</title>
+</head>
+<body>
+<div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Registrar Nuevo Producto</h2>
+        <a href="{{ url_for('mostrar_productos') }}" class="btn btn-outline-secondary">Volver a la Lista</a>
+    </div>
+    <hr>
+
+    <form action="{{ url_for('registrar_producto') }}" method="POST">
+        <div class="row g-3">
+            <!-- Código de Producto -->
+            <div class="col-md-6 mb-3">
+                <label for="COD_PRO" class="form-label">Código</label>
+                <input type="text" class="form-control" name="COD_PRO" id="COD_PRO" placeholder="Ingrese el código del producto" required>
+            </div>
+
+            <!-- Descripción -->
+            <div class="col-md-6 mb-3">
+                <label for="DES_PRO" class="form-label">Descripción</label>
+                <input type="text" class="form-control" name="DES_PRO" id="DES_PRO" placeholder="Ingrese la descripción del producto" required>
+            </div>
+
+            <!-- Precio -->
+            <div class="col-md-6 mb-3">
+                <label for="PRE_PRO" class="form-label">Precio</label>
+                <input type="number" class="form-control" name="PRE_PRO" id="PRE_PRO" step="0.01" placeholder="Ingrese el precio" required>
+            </div>
+
+            <!-- Stock Actual -->
+            <div class="col-md-6 mb-3">
+                <label for="SAC_PRO" class="form-label">Stock Actual</label>
+                <input type="number" class="form-control" name="SAC_PRO" id="SAC_PRO" placeholder="Ingrese el stock actual" required>
+            </div>
+
+            <!-- Stock Mínimo -->
+            <div class="col-md-6 mb-3">
+                <label for="SMI_PRO" class="form-label">Stock Mínimo</label>
+                <input type="number" class="form-control" name="SMI_PRO" id="SMI_PRO" placeholder="Ingrese el stock mínimo" required>
+            </div>
+
+            <!-- Unidad -->
+            <div class="col-md-6 mb-3">
+                <label for="UNI_PRO" class="form-label">Unidad</label>
+                <input type="text" class="form-control" name="UNI_PRO" id="UNI_PRO" placeholder="Ingrese la unidad" required>
+            </div>
+
+            <!-- Línea -->
+            <div class="col-md-6 mb-3">
+                <label for="LIN_PRO" class="form-label">Línea</label>
+                <input type="text" class="form-control" name="LIN_PRO" id="LIN_PRO" placeholder="Ingrese la línea" required>
+            </div>
+
+            <!-- Impuesto -->
+            <div class="col-md-6 mb-3">
+                <label for="IMP_PRO" class="form-label">Impuesto</label>
+                <input type="text" class="form-control" name="IMP_PRO" id="IMP_PRO" placeholder="Ingrese el impuesto" required>
+            </div>
+        </div>
+
+        <!-- Botón de Enviar -->
+        <div class="d-flex justify-content-end mt-3">
+            <button type="submit" class="btn btn-success">Registrar</button>
+        </div>
+    </form>
+</div>
+
+<!-- Optional JavaScript; Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
+

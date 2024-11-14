@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Productos y Proveedores{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Productos y Proveedores</h2>
+    
+    {% if rows %}
+    <div class="table-responsive">
+        <table class="table table-hover mt-4">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Proveedor</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio Abastecimiento</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td>{{ row.Proveedor }}</td>
+                        <td>{{ row.Producto }}</td>
+                        <td>{{ row.PrecioAbastecimiento }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            No se encontraron productos de proveedor.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

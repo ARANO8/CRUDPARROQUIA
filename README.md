@@ -19,8 +19,8 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local:
 
 2.  Sigue los pasos del pdf guia
 
+`https://drive.google.com/file/d/1pBmTl3W4lEBOtBcPZHEIk5WgIwlsQudF/view?usp=sharing `
 
-``[PDF-GUIA](https://drive.google.com/file/d/1pBmTl3W4lEBOtBcPZHEIk5WgIwlsQudF/view?usp=sharing "PDF-GUIA")``
 
 Nota: En SqlServer-BDVENTAS hacer correr lo siguiente:
 

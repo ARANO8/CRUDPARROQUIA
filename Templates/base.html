@@ -11,7 +11,7 @@
     <!-- Custom JavaScript -->
     <script src="{{ url_for('static', filename='js/test.js') }}"></script>
     <!-- Title Block -->
-    <title>Gestión BD VENTAS</title>
+    <title>Gestión BD PARROQUIA</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <a class="navbar-brand" href="#">
                 <img src="https://st3.depositphotos.com/27847728/34794/v/450/depositphotos_347941158-stock-illustration-initial-letter-logo-creative-modern.jpg" alt="" width="60" height="54">
             </a>
-            <a class="navbar-brand" href="/">VENTAS</a>
+            <a class="navbar-brand" href="/">PARROQUIA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,57 +31,20 @@
                         <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/clientes">Clientes</a>
+                        <a class="nav-link" href="/materiales">Material Religioso</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/abastecimiento">Abastecimiento</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Detalle
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="/detalle_compra">Compra</a></li>
-                          <li><a class="dropdown-item" href="/detalle_factura">Factura</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/distritos">Distrito</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/facturas">Factura</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/ordenes-compra">Orden-Compra</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/productos">Producto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/proveedores">Proveedor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/vendedores">Vendedor</a>
-                    </li>
+                
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container mt-4">
-        <h2>VISTAS, PROCEDIMIENTOS Y FUNCIONES EN EL CRUD</h2>
-        <a href="/productos_proveedor" class="btn btn-success">VISTA1</a>
-        <a href="/ventas_por_vendedor" class="btn btn-success">VISTA2</a>
-        <a href="/detalle_facturaproce" class="btn btn-success">PROCEDIMIENTO</a>
-        <a href="/productos_por_distrito" class="btn btn-success">FUNCION</a>
-        <a href="/" class="btn btn-success">VOLVER</a>
+        <h2>CRUD PARA LA PARROQUIA SANTISIMA TRINIDAD</h2>
+        
     </div>
 
 
-    <div class="container mt-4">
-        {% block body %}
-        {% endblock %}
-    </div>
 
     <!-- Optional JavaScript; Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"

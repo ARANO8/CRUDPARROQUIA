@@ -1,18 +1,18 @@
 import pyodbc
 
-conn_str = (
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=localhost\\SQLEXPRESS;"  # Cambia el servidor a localhost\SQLEXPRESS
-    "DATABASE=BDVENTAS;"
-    "UID=CRUDBD;"
-    "PWD=123;"
-)
+def get_connection():
+    try:
+        conn_str = (
+            "DRIVER={ODBC Driver 17 for SQL Server};"
+            "SERVER=localhost;"
+            "DATABASE=bdParroquia;"
+            "Trusted_Connection=yes;"
+        )
+        conn = pyodbc.connect(conn_str)
+        return conn
+    except Exception as e:
+        print(f"Error de conexión: {e}")
+        return None
 
-try:
-    conn = pyodbc.connect(conn_str)
-    print("Conexión exitosa")
-except Exception as e:
-    print("Error al conectar:", e)
-
-
-
+def get_db_connection():
+    return pyodbc.connect(f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER=localhost\\SQLEXPRESS;DATABASE=BDVENTAS;UID=CRUDBD;PWD=123456")
